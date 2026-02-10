@@ -1,4 +1,4 @@
-const SHEETDB_URL = 'https://sheetdb.io/api/v1/h5q98xq2q12oi';
+const SHEETDB_URL = import.meta.env.VITE_SHEETDB_URL;
 
 /**
  * Save quiz result to SheetDB
