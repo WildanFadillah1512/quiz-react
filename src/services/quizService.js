@@ -48,7 +48,7 @@ function transformQuestion(raw) {
  * No fallback data as per request
  */
 export async function fetchQuestions() {
-    const response = await fetch('https://opentdb.com/api.php?amount=10&category=31');
+    const response = await fetch(import.meta.env.VITE_TRIVIA_API_URL || 'https://opentdb.com/api.php?amount=10&category=31');
     if (!response.ok) throw new Error('API response not ok');
 
     const data = await response.json();
