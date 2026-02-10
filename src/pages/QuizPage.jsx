@@ -141,7 +141,7 @@ function QuizPage() {
                             </div>
 
                             <div style={{
-                                display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem',
+                                display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(60px, 1fr))', gap: '0.5rem',
                                 borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1.5rem'
                             }}>
                                 <div>
@@ -149,11 +149,19 @@ function QuizPage() {
                                     <div style={{ fontSize: '0.625rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Poin</div>
                                 </div>
                                 <div>
+                                    <div style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--cyan-400)' }}>{quiz.totalAnswered}</div>
+                                    <div style={{ fontSize: '0.625rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Jawab</div>
+                                </div>
+                                <div>
+                                    <div style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--text-muted)' }}>{totalQuestions - quiz.totalAnswered}</div>
+                                    <div style={{ fontSize: '0.625rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Kosong</div>
+                                </div>
+                                <div>
                                     <div style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--green-500)' }}>{correctCount}</div>
                                     <div style={{ fontSize: '0.625rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Benar</div>
                                 </div>
                                 <div>
-                                    <div style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--red-500)' }}>{totalQuestions - correctCount}</div>
+                                    <div style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--red-500)' }}>{quiz.totalAnswered - correctCount}</div>
                                     <div style={{ fontSize: '0.625rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Salah</div>
                                 </div>
                             </div>
